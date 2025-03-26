@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Suggested Palette</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .palette-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .palette-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your preferred palette might be:</h1>
+    <div id="paletteContainer"></div>
+
+    <script>
+        const selectedPalette = localStorage.getItem('selectedPalette');
+        if (selectedPalette) {
+            const button = document.createElement('a');
+            button.href = selectedPalette + '.html'; // either urban.html or warm.html
+            button.textContent = selectedPalette.charAt(0).toUpperCase() + selectedPalette.slice(1) + ' Palette';
+            button.className = 'palette-btn';
+            document.getElementById('paletteContainer').appendChild(button);
+        } else {
+            document.getElementById('paletteContainer').innerHTML = '<p>No palette selected. Please complete the personalization form first.</p>';
+        }
+    </script>
+</body>
+</html>

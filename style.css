@@ -1,0 +1,130 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.header-background {
+    background-image: url('images/image1.jpg'); /* Image1 as background */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 0;
+    color: white;
+}
+
+.header-background h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header-background p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+}
+
+.image-left img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+.text-right {
+    width: 45%;
+}
+
+.why-choose-us {
+    text-align: center;
+    padding: 50px;
+}
+
+.reasons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.reason {
+    width: 23%;
+    text-align: center;
+}
+
+.reason img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.what-we-do {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    text-align: center;
+}
+
+.what-we-do .section-content {
+    width: 45%;
+}
+
+.gallery-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 50px;
+}
+
+.testimonials .review {
+    margin: 20px 0;
+}
+
+.contact-us {
+    text-align: center;
+    padding: 50px;
+}
+
+.login-signup {
+    text-align: center;
+    padding: 50px;
+}
+
+.login-signup a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}

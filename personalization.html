@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalization Questions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3a8c3f;
+        }
+    </style>
+</head>
+<body>
+    <form id="personalizationForm">
+        <h2>Before we get started, let us know your preferences</h2>
+        <div>
+            <p>1. Do you prefer light or dark tones?</p>
+            <input type="radio" name="q1" value="light" required> Light<br>
+            <input type="radio" name="q1" value="dark"> Dark<br>
+        </div>
+        <div>
+            <p>2. Do you like minimal or vibrant decor?</p>
+            <input type="radio" name="q2" value="minimal" required> Minimal<br>
+            <input type="radio" name="q2" value="vibrant"> Vibrant<br>
+        </div>
+        <div>
+            <p>3. Do you prefer modern or traditional style?</p>
+            <input type="radio" name="q3" value="modern" required> Modern<br>
+            <input type="radio" name="q3" value="traditional"> Traditional<br>
+        </div>
+        <div>
+            <p>4. Do you like cool or warm colors?</p>
+            <input type="radio" name="q4" value="cool" required> Cool<br>
+            <input type="radio" name="q4" value="warm"> Warm<br>
+        </div>
+        <div>
+            <p>5. Spacious or cozy spaces?</p>
+            <input type="radio" name="q5" value="spacious" required> Spacious<br>
+            <input type="radio" name="q5" value="cozy"> Cozy<br>
+        </div>
+        <div>
+            <p>6. Clean lines or artistic patterns?</p>
+            <input type="radio" name="q6" value="clean" required> Clean<br>
+            <input type="radio" name="q6" value="artistic"> Artistic<br>
+        </div>
+        <div>
+            <p>7. Simple or luxurious finish?</p>
+            <input type="radio" name="q7" value="simple" required> Simple<br>
+            <input type="radio" name="q7" value="luxurious"> Luxurious<br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('personalizationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            let urbanPoints = 0;
+            let warmPoints = 0;
+
+            // Assign points based on responses
+            for (let [key, value] of formData.entries()) {
+                if (
+                    value === 'light' || 
+                    value === 'minimal' || 
+                    value === 'modern' || 
+                    value === 'cool' || 
+                    value === 'spacious' || 
+                    value === 'clean' || 
+                    value === 'simple'
+                ) {
+                    urbanPoints++;
+                } else {
+                    warmPoints++;
+                }
+            }
+
+            // Tie-breaking: urban gets preference if equal points
+            const selectedPalette = (urbanPoints >= warmPoints) ? 'urban' : 'warm';
+            localStorage.setItem('selectedPalette', selectedPalette);
+            window.location.href = "palette.html";
+        });
+    </script>
+</body>
+</html>

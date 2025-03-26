@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Preferred Palette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Your preferred palette might be:</h2>
+    <div id="paletteDisplay"></div>
+
+    <script>
+        const selectedPalette = localStorage.getItem('selectedPalette');
+        const paletteDisplay = document.getElementById('paletteDisplay');
+
+        if (selectedPalette === 'urban') {
+            paletteDisplay.innerHTML = `
+                <h3>Urban Elegance</h3>
+                <button onclick="window.location.href='urban.html'" style="padding:10px 20px; background-color:#333; color:white; border:none; cursor:pointer; font-size:16px;">View Urban Palette</button>
+            `;
+        } else if (selectedPalette === 'warm') {
+            paletteDisplay.innerHTML = `
+                <h3>Warm Harmony</h3>
+                <button onclick="window.location.href='warm.html'" style="padding:10px 20px; background-color:#b3571c; color:white; border:none; cursor:pointer; font-size:16px;">View Warm Palette</button>
+            `;
+        } else {
+            paletteDisplay.innerHTML = <p>Could not determine your palette. Please try again.</p>;
+        }
+    </script>
+</body>
+</html>

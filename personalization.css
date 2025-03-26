@@ -1,0 +1,77 @@
+/* Centering the entire form */
+#personalization-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Styling the container for the form */
+#personalization-form > div {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Styling the title of the form */
+#personalization-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Styling the questions and labels */
+#personalization-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Styling the radio buttons */
+#personalization-form input[type="radio"] {
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+/* Styling the submit button */
+#personalization-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Hover effect for the submit button */
+#personalization-form button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Media query for smaller screens */
+@media (max-width: 768px) {
+    #personalization-form > div {
+        padding: 20px;
+    }
+
+    #personalization-form h2 {
+        font-size: 20px;
+    }
+
+    #personalization-form label {
+        font-size: 14px;
+    }
+}
